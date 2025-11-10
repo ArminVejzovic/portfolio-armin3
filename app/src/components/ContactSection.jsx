@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "../i18n/i18n";
 
 const ContactSection = () => {
@@ -44,28 +43,27 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           <h2 className="text-4xl lg:text-5xl font-black gradient-text mb-4 text-gray-900 dark:text-gray-100">
-            Get In Touch
+            { translations.contact.title }
           </h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left Info */}
           <div className={`space-y-8 ${isVisible ? "animate-slide-in-left" : "opacity-0"}`}>
             <div>
               <h3 className="text-3xl font-bold gradient-text mb-4 text-gray-900 dark:text-gray-100">
                 { translations.hero.name }
               </h3>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                I'm passionate about creating exceptional digital experiences and would love to discuss your next project.
+                { translations.contact.description }
               </p>
             </div>
 
             <div className="space-y-6">
               {[
-                { icon: "📧", title: "Email", value: translations.contact.info.email },
-                { icon: "📱", title: "Phone", value: translations.contact.info.phone },
-                { icon: "🌍", title: "Location", value: translations.contact.info.location },
+                { icon: "📧", title: translations.contact.info_fields.email, value: translations.contact.info.email },
+                { icon: "📱", title: translations.contact.info_fields.phone, value: translations.contact.info.phone },
+                { icon: "🌍", title: translations.contact.info_fields.location, value: translations.contact.info.location },
               ].map((contact) => (
                 <div
                   key={contact.title}
@@ -83,7 +81,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right Form */}
           <div className={`${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
             <form
               onSubmit={handleSubmit}
@@ -91,9 +88,9 @@ const ContactSection = () => {
             >
               <div className="space-y-6">
                 {[
-                  { name: "name", type: "text", label: "Full Name", placeholder: "Your name" },
-                  { name: "email", type: "email", label: "Email Address", placeholder: "your@email.com" },
-                  { name: "subject", type: "text", label: "Subject", placeholder: "Project discussion" },
+                  { name: "name", type: "text", label: translations.contact.fields.name, placeholder: translations.contact.placeholders.name },
+                  { name: "email", type: "email", label: translations.contact.fields.email, placeholder: translations.contact.placeholders.email },
+                  { name: "subject", type: "text", label: translations.contact.fields.subject, placeholder: translations.contact.placeholders.subject },
                 ].map((field) => (
                   <div key={field.name}>
                     <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
@@ -112,12 +109,12 @@ const ContactSection = () => {
                 ))}
 
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                  <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">{ translations.contact.fields.message }</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project..."
+                    placeholder= { translations.contact.placeholders.message }
                     required
                     rows="5"
                     className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-white focus:border-primary-500 focus:bg-white dark:focus:bg-gray-600 transition-all duration-300 focus:scale-105 resize-none"
@@ -125,7 +122,7 @@ const ContactSection = () => {
                 </div>
 
                 <button className="w-full py-4 bg-gradient-primary text-white font-bold text-lg rounded-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 ripple">
-                  Send Message ✨
+                  { translations.contact.fields.send }
                 </button>
               </div>
             </form>

@@ -52,6 +52,11 @@ const translations = {
         phone: "+387 61 688 538",
         location: "Sarajevo, Bosnia and Herzegovina",
       },
+      info_fields: {
+        email: "Email",
+        phone: "Phone",
+        location: "Location",
+      },
     },
     footer: {
       text: "© 2025 Armin Vejzovic. Built with React & Tailwind CSS",
@@ -109,7 +114,12 @@ const translations = {
       info: {
         email: "29armin.vejzovic@gmail.com",
         phone: "+387 61 688 538",
-        location: "Sarajevo, BiH",
+        location: "Sarajevo, Bosna i Hercegovina",
+      },
+      info_fields: {
+        email: "Email",
+        phone: "Broj telefona",
+        location: "Lokacija",
       },
     },
     footer: {
