@@ -35,10 +35,20 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <a
             href="#"
-            className="text-2xl font-bold gradient-text hover:scale-105 transition-transform"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="group flex items-center gap-2 text-2xl font-bold transition-transform duration-300 hover:scale-105"
+            aria-label="Scroll to top"
           >
-            { translations.hero.name }
+            <img
+              src="/logo.png"
+              alt="Armin Vejzovic Logo"
+              className="h-9 w-auto drop-shadow-md group-hover:drop-shadow-xl transition-all duration-300"
+            />
           </a>
+
 
           <div className="hidden md:flex items-center space-x-8">
             <a
@@ -96,18 +106,21 @@ const Header = () => {
           <div className="text-center md:hidden mt-4 pb-4 space-y-4 border-t border-gray-200 dark:border-gray-700 pt-4">
             <a
               href="#skills"
+              onClick={() => setIsMenuOpen(false)}
               className="block text-gray-700 dark:text-gray-300 hover:text-primary-500 font-medium transition-colors"
             >
               { translations.header.skills }
             </a>
             <a
               href="#projects"
+              onClick={() => setIsMenuOpen(false)}
               className="block text-gray-700 dark:text-gray-300 hover:text-primary-500 font-medium transition-colors"
             >
               { translations.header.projects }
             </a>
             <a
               href="#contact"
+              onClick={() => setIsMenuOpen(false)}
               className="block text-gray-700 dark:text-gray-300 hover:text-primary-500 font-medium transition-colors"
             >
               { translations.header.contact }
