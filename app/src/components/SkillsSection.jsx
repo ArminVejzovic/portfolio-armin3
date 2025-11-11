@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { useState, useEffect, useRef, useContext } from "react";
+import { useTranslation } from "../i18n/i18n";
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef();
-  const { isDark } = useContext(ThemeContext);
+  const { translations } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,32 +20,32 @@ const SkillsSection = () => {
 
   const skillCategories = [
     {
-      title: "Programming Languages",
+      title: translations.skills.programming_title,
       icon: "💻",
       skills: ["JavaScript", "Python", "C++"],
     },
     {
-      title: "Frontend Development",
+      title: translations.skills.frontend_title,
       icon: "⚡",
       skills: ["HTML", "CSS", "React.js", "Next.js", "Tailwind CSS"],
     },
     {
-      title: "Backend Development",
+      title: translations.skills.backend_title,
       icon: "🧠",
       skills: ["Node.js", "Express.js", "FastAPI"],
     },
     {
-      title: "Databases",
+      title: translations.skills.databases_title,
       icon: "🗄️",
       skills: ["PostgreSQL", "MySQL", "SQLite", "MongoDB"],
     },
     {
-      title: "Mobile Development",
+      title: translations.skills.mobile_title,
       icon: "📱",
       skills: ["Android Jetpack Compose (Kotlin)"],
     },
     {
-      title: "Tools & Other",
+      title: translations.skills.tools_title,
       icon: "🧰",
       skills: ["Git", "GitHub", "Redis", "CI/CD Pipelines", "Agile & Scrum"],
     },
@@ -58,23 +58,20 @@ const SkillsSection = () => {
       className="py-24 px-6 bg-gray-50 dark:bg-gray-900 transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <div
           className={`text-center mb-16 transform transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-extrabold gradient-text mb-4">
-            Skills & Expertise
+            { translations.skills.title}
           </h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
           <p className="mt-4 text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            A blend of technical precision and creative problem-solving —
-            constantly learning, building, and improving.
+            { translations.skills.description}
           </p>
         </div>
 
-        {/* Skill Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <div

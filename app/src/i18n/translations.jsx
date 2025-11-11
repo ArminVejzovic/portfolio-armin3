@@ -14,9 +14,13 @@ const translations = {
     },
     skills: {
       title: "Skills & Expertise",
+      description: "A blend of technical precision and creative problem-solving — constantly learning, building, and improving.",
+      programming_title: "Programming Languages",
       frontend_title: "Frontend Magic",
       backend_title: "Backend Power",
-      design_title: "Design & Tools",
+      databases_title: "Databases",
+      mobile_title: "Mobile Development",
+      tools_title: "Tools & Other",
     },
     projects: {
       title: "Featured Projects",
@@ -78,9 +82,13 @@ const translations = {
     },
     skills: {
       title: "Vještine i Stručnost",
-      frontend_title: "Frontend Magija",
-      backend_title: "Backend Snaga",
-      design_title: "Dizajn i Alati",
+      description: "Spoj tehničke preciznosti i kreativnog rješavanja problema — stalno učim, gradim i napredujem.",
+      programming_title: "Programski Jezici",
+      frontend_title: "Frontend Razvoj",
+      backend_title: "Backend Razvoj",
+      databases_title: "Baze Podataka",
+      mobile_title: "Mobilni Razvoj",
+      tools_title: "Alati i Ostalo",
     },
     projects: {
       title: "Istaknuti Projekti",
