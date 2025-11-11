@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { ThemeContext } from './ThemeContext';
+import { useTranslation } from '../i18n/i18n';
 
 
     const ProjectsSection = () => {
       const [isVisible, setIsVisible] = useState(false);
       const sectionRef = useRef();
-      const { isDark, toggleTheme } = useContext(ThemeContext);
+      const { translations } = useTranslation();
 
       useEffect(() => {
         const observer = new IntersectionObserver(
@@ -25,34 +25,39 @@ import { ThemeContext } from './ThemeContext';
       }, []);
 
       const projects = [
-        {
-          title: 'AI-Powered Dashboard',
-          description: 'A comprehensive analytics platform with real-time data visualization, machine learning insights, and interactive charts built with React and D3.js.',
-          icon: '🤖',
-          tags: ['React', 'TypeScript', 'D3.js', 'Python', 'TensorFlow'],
-          gradient: 'from-blue-500 to-purple-600'
-        },
-        {
-          title: 'E-Commerce Platform',
-          description: 'Full-stack e-commerce solution with payment integration, inventory management, and modern UI/UX design patterns.',
-          icon: '🛒',
-          tags: ['Next.js', 'Stripe', 'MongoDB', 'Tailwind CSS'],
-          gradient: 'from-green-500 to-teal-600'
-        },
-        {
-          title: 'Social Media App',
-          description: 'Real-time social media application with live messaging, file sharing, and responsive design for all devices.',
-          icon: '📱',
-          tags: ['React Native', 'Socket.io', 'Node.js', 'PostgreSQL'],
-          gradient: 'from-pink-500 to-rose-600'
-        }
-      ];
-
+    {
+      title: 'Adoptly',
+      description:
+        translations.projects.project1_desc,
+      icon: '🐾',
+      tags: ['Node.js', 'Express.js', 'CSS', 'React.js', 'MongoDB', 'Socket.io', 'OpenAI Deepseek API', 'JWT'],
+      gradient: 'from-amber-500 to-orange-600',
+      link: "https://github.com/ArminVejzovic/adoptly"
+    },
+    {
+      title: 'Foodie',
+      description:
+        translations.projects.project2_desc,
+      icon: '🍔',
+      tags: ['FastAPI', 'CSS', 'Next.js', 'PostgreSQL'],
+      gradient: 'from-red-500 to-yellow-600',
+      link: "https://github.com/ArminVejzovic/foodie"
+    },
+    {
+      title: 'Project Records',
+      description:
+        translations.projects.project3_desc,
+      icon: '📂',
+      tags: ['Node.js', 'Express.js', 'CSS', 'EJS', 'PostgreSQL'],
+      gradient: 'from-indigo-500 to-blue-600',
+      link: "https://github.com/ArminVejzovic/Project-Records"
+    },
+  ];
       return (
         <section ref={sectionRef} id="projects" className="py-20 px-6 bg-gray-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto">
             <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <h2 className="text-4xl lg:text-5xl font-black gradient-text mb-4">Featured Projects</h2>
+              <h2 className="text-4xl lg:text-5xl font-black gradient-text mb-4"> { translations.projects.title }</h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             </div>
 
@@ -80,18 +85,24 @@ import { ThemeContext } from './ThemeContext';
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <a href="#" className="text-primary-500 hover:text-primary-600 font-bold transition-colors flex items-center group">
-                        Live Demo
-                        <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                      </a>
-                      <a href="#" className="text-primary-500 hover:text-primary-600 font-bold transition-colors flex items-center group">
-                        Source Code
+                      <a href={ project.link } target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:text-primary-600 font-bold transition-colors flex items-center group">
+                        { translations.projects.code }
                         <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                       </a>
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="text-center mt-16">
+              <a
+                href="https://github.com/ArminVejzovic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
+              >
+                View More Projects on GitHub
+              </a>
             </div>
           </div>
         </section>
