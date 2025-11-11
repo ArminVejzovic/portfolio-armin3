@@ -101,7 +101,7 @@ import { useTranslation } from '../i18n/i18n';
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
               >
-                View More Projects on GitHub
+                { translations.projects.more_projects }
               </a>
             </div>
           </div>
