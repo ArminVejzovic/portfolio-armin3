@@ -1,9 +1,9 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 import translations from './translations';
 
 const I18nContext = createContext();
 
-const SUPPORTED_LANGUAGES = ['en', 'bs']; // dodaj sve koje podržavaš
+const SUPPORTED_LANGUAGES = ['en', 'bs'];
 
 export const I18nProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
