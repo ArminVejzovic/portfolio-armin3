@@ -24,7 +24,6 @@ const translations = {
     },
     projects: {
       title: "Featured Projects",
-      demo: "Live Demo",
       code: "Source Code",
       project1_desc: "Adoptly is a modern MERN web application that connects adopters with pet owners and animal shelters. It offers AI-powered pet recommendations, real-time chat, analytics, and full administration of the adoption process.",
       project2_desc: "A web application for food ordering and restaurant management, including menus and deliveries, featuring a modern user interface and full CRUD functionality.",
@@ -90,7 +89,6 @@ const translations = {
     },
     projects: {
       title: "Istaknuti Projekti",
-      demo: "Pregled uživo",
       code: "Izvorni kod",
       project1_desc: "Adoptly je moderna MERN web aplikacija koja povezuje udomitelje sa vlasnicima i skloništima za životinje. Nudi AI preporuke ljubimaca, real-time chat, statistike i potpunu administraciju procesa udomljavanja.",
       project2_desc: "Web aplikacija za naručivanje hrane i upravljanje restoranima, menijima i dostavom, sa modernim korisničkim interfejsom i potpunim CRUD funkcionalnostima.",
