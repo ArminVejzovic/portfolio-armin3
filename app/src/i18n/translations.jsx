@@ -72,7 +72,7 @@ const translations = {
     },
     hero: {
       name: "Armin Vejzović",
-      title: "React Developer",
+      title: "Softverski Inžinjer",
       tagline: "Ja sam stručni specijalista za informacione tehnologije, diplomirao sam na Prirodno-matematičkom fakultetu u Sarajevu. Strastveno se bavim full-stack razvojem, uživam u kreiranju dinamičnih i responzivnih web aplikacija te u učenju novih tehnologija.",
       view_projects: "Pogledaj projekte",
       lets_connect: "Kontaktiraj me",
